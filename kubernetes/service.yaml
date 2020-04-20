@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2020-04-17T12:51:48Z"
+  labels:
+    app: hello-world-rest-api
+  name: hello-world-rest-api
+  namespace: default
+  resourceVersion: "2106"
+  selfLink: /api/v1/namespaces/default/services/hello-world-rest-api
+  uid: 333d7dc9-80aa-11ea-b101-42010a800115
+spec:
+  clusterIP: 10.8.1.84
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 31804
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: hello-world-rest-api
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 35.232.214.229
